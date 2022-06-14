@@ -7,3 +7,4 @@ Please checkout the branch.
 - .gitigrone
 - dockerfile
 - makefile
+- design_pattern
