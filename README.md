@@ -11,3 +11,5 @@ Please checkout the branch.
 - dockerfile
 - copy: deep copy , shallow copy
 - go embed
+- db
+  - redis
