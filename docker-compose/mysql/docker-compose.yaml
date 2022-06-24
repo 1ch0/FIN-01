@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8
+    ports:
+      - "53306:3306"
+    container_name: demo
+    environment:
+      MYSQL-DATABASE: demo
+      MYSQL_ROOT_PASSWORD: d1angerous--
+      TZ: Asia/Shanghai
+    restart: always
