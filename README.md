@@ -1,5 +1,5 @@
 # go-cx
-## Useful go web demo.
+## Useful go demo.
 Please checkout the branch.
 - gin
 - zap
@@ -10,3 +10,4 @@ Please checkout the branch.
 - design_pattern
 - dockerfile
 - copy: deep copy , shallow copy
+- go embed
