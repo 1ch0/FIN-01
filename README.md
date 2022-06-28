@@ -14,7 +14,7 @@ Please checkout the branch.
       - mysql
       - mongodb
       - redis
-- web  framework
+- web-framework
   - gin
   - kratos
 - library
