@@ -9,7 +9,7 @@ services:
       - 57017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: zxc,./,./
+      MONGO_INITDB_ROOT_PASSWORD: root
       TZ: Asia/Shanghai
 
   mongo-express:
@@ -19,5 +19,5 @@ services:
       - 58081:8081
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: zxc,./,./
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
       ME_CONFIG_MONGODB_SeERVER: mongodb
