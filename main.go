@@ -1,8 +1,8 @@
 package main
 
-import "go-cx/cmd"
+import "go-cx/cobra"
 
 // source: https://github.com/scraly/learning-go-by-examples
 func main() {
-	cmd.Execute()
+	cobra.Execute()
 }
