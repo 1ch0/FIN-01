@@ -5,6 +5,8 @@ go 1.17
 require (
 	cuelang.org/go v0.4.3
 	github.com/oam-dev/kubevela v1.4.2
+	github.com/onsi/ginkgo v1.16.5
+	github.com/onsi/gomega v1.19.0
 	go.mongodb.org/mongo-driver v1.9.1
 )
 
@@ -16,8 +18,6 @@ require (
 	github.com/klauspost/compress v1.15.4 // indirect
 	github.com/mpvl/unique v0.0.0-20150818121801-cbe035fff7de // indirect
 	github.com/nxadm/tail v1.4.8 // indirect
-	github.com/onsi/ginkgo v1.16.5 // indirect
-	github.com/onsi/gomega v1.19.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
 	github.com/xdg-go/scram v1.0.2 // indirect
