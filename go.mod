@@ -5,7 +5,6 @@ go 1.17
 require (
 	cuelang.org/go v0.4.3
 	github.com/Lofanmi/pinyin-golang v0.0.0-20211114132645-1db892057f20
-	github.com/alibabacloud-go/tea v1.1.19
 	github.com/oam-dev/kubevela v1.4.8
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.20.0

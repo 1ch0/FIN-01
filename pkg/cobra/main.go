@@ -1,6 +1,6 @@
 package main
 
-import "go-cx/cobra"
+import "go-cx/pkg/cobra/cobra"
 
 // source: https://github.com/scraly/learning-go-by-examples
 func main() {
