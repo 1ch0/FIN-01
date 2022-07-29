@@ -7,6 +7,7 @@ require (
 	github.com/oam-dev/kubevela v1.4.2
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.19.0
+	github.com/spf13/pflag v1.0.5
 	go.mongodb.org/mongo-driver v1.9.1
 )
 
