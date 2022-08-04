@@ -3,7 +3,7 @@ num: 42
 flt: 3.14
 
 // Special field name (and a comment)
-"k8s.io/annotation": "secure-me"
+"k8s1.io/annotation": "secure-me"
 
 // lists can have different element types
 list: [

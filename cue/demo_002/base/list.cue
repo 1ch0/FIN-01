@@ -6,7 +6,7 @@ nested: [...[...string]]
 opened: ints & [1,2,...]
 closed: ints & [1,2,3]
 
-// list of for constrained ints
+// list.cue of for constrained ints
 ip: 4 * [uint8]
 // sets the first element
 tendot: ip & [10, ...uint8]

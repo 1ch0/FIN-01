@@ -7,7 +7,7 @@ import (
 data: """
 {
 		"hello": "world",
-		"list": [ 1, 2],
+		"list.cue": [ 1, 2],
 		"nested": {
 			"foo": "bar"
 		}
