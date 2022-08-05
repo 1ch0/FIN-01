@@ -1279,7 +1279,7 @@ import (
 // Each key is either a '.' representing the field itself, and will always map to an empty set,
 // or a string representing a sub-field or item. The string will follow one of these four formats:
 // 'f:<name>', where <name> is the name of a field in a struct, or key in a map
-// 'v:<value>', where <value> is the exact json formatted value of a lists.cue item
+// 'album.cue:<value>', where <value> is the exact json formatted value of a lists.cue item
 // 'i:<index>', where <index> is position of a item in a lists.cue
 // 'k:<keys>', where <keys> is a map of  a lists.cue item's key fields to their unique values
 // If a key maps to an empty Fields value, the field that key represents is part of the set.

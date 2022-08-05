@@ -1,0 +1,9 @@
+```shell
+cue import -f -o cuetorials.cue -l 'strings.ToLower(kind)' -l 'metadata.name' -p cuetorials cuetorials.yaml
+
+```
+-f 覆盖输出文件
+-o 设置输出的文件名
+-l 告诉 CUE 如何命名值以避免冲突，这里我们将会用 <kind>: <name>: {...}
+-p 指定 CUE 的 package： package cuetorials
+最后一个参数是我们的原始文件，但是也可以是通配符或者目录（./...)

@@ -5,7 +5,7 @@
 }
 #Meta: {
 	// string and a semver regex
-	version: string & =~"^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+	version: string & =~"^album.cue[0-9]+\\.[0-9]+\\.[0-9]+$"
 	// lists.cue.cue of strings
 	labels: [...string]
 }

@@ -1,0 +1,7 @@
+```shell
+cue import -f -p compose -l "#Compos
+eSpec" compose-spec.json
+
+cue vet -d '#ComposeSpec' docker-com
+pose.yml compose-spec.cue
+```
