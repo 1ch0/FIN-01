@@ -1,4 +1,3 @@
-
 A: {
 	a:    "A"
 	"2f": 3
@@ -11,7 +10,7 @@ a: {
 	f2: A["a"]
 	// must index
 	f3: A["2f"]
-	// 	f3: A."2f"
+	//  f3: A."2f"
 	// list index
 	f4: A.l[1]
 }

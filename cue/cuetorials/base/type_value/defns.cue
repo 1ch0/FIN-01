@@ -1,4 +1,3 @@
-
 #schema: {
 	word:      string
 	num:       int | *42

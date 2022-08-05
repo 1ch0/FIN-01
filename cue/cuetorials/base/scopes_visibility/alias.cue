@@ -1,4 +1,3 @@
- 
 import "strings"
 
 label: "app"

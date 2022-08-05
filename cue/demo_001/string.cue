@@ -1,6 +1,6 @@
 import (
-		"strconv"
-		"encoding/json"
+	"strconv"
+	"encoding/json"
 )
 
 test: {
@@ -8,14 +8,14 @@ test: {
 	test: "example: \(json.Marshal(testvalue))"
 }
 
-testvalue = {"value": 10}
+let testvalue = {"value": 10}
 
 parameter: {
-	name: string
+	name:  string
 	value: int
 }
 
 parameter: {
-	name: "test"
+	name:  "test"
 	value: 10
 }

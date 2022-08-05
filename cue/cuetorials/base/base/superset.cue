@@ -1,4 +1,3 @@
- 
 str: "hello world"
 num: 42
 flt: 3.14

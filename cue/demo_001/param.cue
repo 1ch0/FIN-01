@@ -1,17 +1,17 @@
 import (
-		"encoding/json"
+	"encoding/json"
 )
 
 test: {
-	name: parameter.name
+	name:  parameter.name
 	value: json.Marshal(testvalue)
 }
 
-testvalue = {"value": 10}
+let testvalue = {"value": 10}
 
 // 参数为可选项 ?
 parameter: {
-	name: string
+	name:   string
 	value?: int
 }
 

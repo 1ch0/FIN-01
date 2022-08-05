@@ -1,4 +1,3 @@
-
 // a mathematically valid releationship
 // but invalid in Cue until one or the other has a value
 a: b - 10

@@ -1,4 +1,3 @@
-
 #A: {
 	num: number
 }

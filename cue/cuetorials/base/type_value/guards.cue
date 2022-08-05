@@ -1,4 +1,3 @@
-
 app: {
 	name: string
 	tech: string
@@ -25,5 +24,5 @@ app: {
 app: {
 	name: "web1"
 	tech: "react"
-	mem: 2G
+	mem:  2G
 }

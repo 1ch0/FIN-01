@@ -1,4 +1,3 @@
-
 str1: #"avoid using \ to "escape""#
 str2: ##"""
 	#"""

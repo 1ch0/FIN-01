@@ -1,4 +1,3 @@
-
 empty: []
 any: [...]
 ints: [...int]
@@ -18,7 +17,6 @@ mixed: any & [...] & ["a", 1, {foo: "bar"}]
 join:  [1, 2] + [3, 4]
 Join:  opened & join
 
+tendot: [10, 1, 1, 1]
 
-tendot: [10,1,1,1]
-
-one72: [172,18,1,1]
+one72: [172, 18, 1, 1]

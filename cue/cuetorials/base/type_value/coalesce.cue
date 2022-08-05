@@ -1,4 +1,3 @@
-
 elems: ["a", "b", "c"]
 a: *elems[0] | "A"
 // out of bounds error

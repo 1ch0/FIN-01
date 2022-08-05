@@ -7,10 +7,10 @@
 //跨作用域中定义字段，必须通过完整的路径解析
 val: 42
 A: {
-	val: 23
-	num: val
+	val:       23
+	num:       val
 	"user-id": "abc"
-	UserID: A["user-id"]
+	UserID:    A["user-id"]
 }
 
 A: {

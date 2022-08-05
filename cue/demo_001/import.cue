@@ -1,22 +1,22 @@
 import (
-    "strconv"
-    "encoding/json"
+	"strconv"
+	"encoding/json"
 )
 
 test: {
-    name: strconv.FormatInt(parameter.value, 10)
-    test: json.Marshal(testvalue)
+	name: strconv.FormatInt(parameter.value, 10)
+	test: json.Marshal(testvalue)
 }
 
-testvalue = {"value": 10}
+let testvalue = {"value": 10}
 
 parameter: {
-    name: string
-    value: int
+	name:  string
+	value: int
 }
 
 // 设置值
 parameter: {
-    name: "test"
-    value: 10
+	name:  "test"
+	value: 10
 }

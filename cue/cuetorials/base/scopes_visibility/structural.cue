@@ -1,4 +1,3 @@
-
 #List: {
 	val:  _
 	next: #List | *null

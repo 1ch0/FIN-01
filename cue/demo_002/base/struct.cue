@@ -1,7 +1,7 @@
 #Album: {
 	artist: string
-	title: string
-	year: int
+	title:  string
+	year:   int
 
 	// ... uncomment to open, must be last
 }
@@ -9,8 +9,8 @@
 // This is a conjunction, it says "album" has to be "#Album"
 album: #Album & {
 	artist: "Led Zeppelin"
-	title: "Led Zeppelin I"
-	year: 1999
+	title:  "Led Zeppelin I"
+	year:   1999
 
 	// studio: true (uncomment to trigger error)
 }
@@ -22,7 +22,7 @@ album: #Album & {
 
 Jim: #Person & {
 	name: "Jill"
-	age: 18
+	age:  18
 }
 
 a: {

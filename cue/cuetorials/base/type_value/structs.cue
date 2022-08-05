@@ -1,4 +1,3 @@
-
 // an open struct
 a: {
 	foo: "bar"

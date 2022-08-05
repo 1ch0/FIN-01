@@ -1,4 +1,3 @@
-
 apps: ["nginx", "express", "postgres"]
 #labels: [string]: string
 stack: {

@@ -1,10 +1,10 @@
-// 约束 &
+	// 约束 &
 n: int & >0 & <100
 n: 23
 
 // conjunction of schemas
 val: #Def1 & #Def2
-val: { foo: "bar", ans: 42 }
+val: {foo: "bar", ans: 42}
 
 #Def1: {
 	foo: string
@@ -12,6 +12,6 @@ val: { foo: "bar", ans: 42 }
 }
 
 #Def2: {
-	foo: =~ "[a+z]+"
+	foo: =~"[a+z]+"
 	ans: >0
 }

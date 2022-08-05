@@ -1,13 +1,13 @@
 test: {
 	name: parameter["name"]
-//	 _|_ 代表空对象
+	//  _|_ 代表空对象
 	if parameter.value != _|_ {
-		value = parameter.value
+		let value = parameter.value
 	}
 }
 
 parameter: {
-	name: string
+	name:   string
 	value?: int
 }
 

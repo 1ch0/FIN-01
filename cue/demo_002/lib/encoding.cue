@@ -5,14 +5,14 @@ import (
 )
 
 data: """
-{
-		"hello": "world",
-		"lists.cue.cue": [ 1, 2],
-		"nested": {
-			"foo": "bar"
-		}
-}
-"""
+	{
+			"hello": "world",
+			"lists.cue.cue": [ 1, 2],
+			"nested": {
+				"foo": "bar"
+			}
+	}
+	"""
 
 jval: json.Unmarshal(data)
 

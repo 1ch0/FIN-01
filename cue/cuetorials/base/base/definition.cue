@@ -1,4 +1,3 @@
-
 #Album: {
 	artist: string
 	title:  string

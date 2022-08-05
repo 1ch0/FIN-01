@@ -9,7 +9,7 @@ port: 5432
 
 // disjunction of schemas
 val: #Def1 | #Def2
-val: { foo: "bar", ans: 42}
+val: {foo: "bar", ans: 42}
 
 #Def1: {
 	foo: string

@@ -1,11 +1,11 @@
 test: {
-	name: parameter["name"]
+	name:  parameter["name"]
 	value: parameter["value"]
 }
 
 parameter: {
 	name: [...string]
-	value?: [... >=0 & < 10 & int]
+	value?: [... >=0 & <10 & int]
 }
 
 parameter: {
@@ -15,9 +15,9 @@ parameter: {
 
 test2: {
 	key: [
-		for k, v in parameter2["name"]{
+		for k, v in parameter2["name"] {
 			name: v
-		}
+		},
 	]
 }
 
@@ -28,6 +28,6 @@ parameter2: {
 parameter2: {
 	name: [
 		"job1",
-		"job2"
-		]
+		"job2",
+	]
 }

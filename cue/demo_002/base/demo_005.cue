@@ -1,5 +1,5 @@
 s: {
-	hello: string | *"world" | "apple"
+	hello:  string | *"world" | "apple"
 	count?: int & >10
 }
 

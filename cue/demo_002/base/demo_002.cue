@@ -3,20 +3,20 @@
 
 album: {
 	title: string
-	year: int
-	live: bool
+	year:  int
+	live:  bool
 }
 
 // 约束
 album: {
 	title: string
-	year: >1950
-	live: false
+	year:  >1950
+	live:  false
 }
 
 // 数据
 album: {
 	title: "Houses of the Holy"
-	year: 1973
-	live: false
+	year:  1973
+	live:  false
 }

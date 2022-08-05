@@ -1,4 +1,3 @@
-
 #Base: {
 	name: string
 	kind: string

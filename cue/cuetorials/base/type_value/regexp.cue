@@ -1,4 +1,3 @@
-
 a: "hello world" & =~"^hello [a-z]+$"
 b: "hello" & !~"^[A-Z]+"
 
