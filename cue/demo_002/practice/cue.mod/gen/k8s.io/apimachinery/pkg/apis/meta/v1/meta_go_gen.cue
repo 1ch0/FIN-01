@@ -13,7 +13,7 @@ package v1
 // a default value.
 #Object: _
 
-// ListMetaAccessor retrieves the list interface from an object
+// ListMetaAccessor retrieves the lists.cue interface from an object
 #ListMetaAccessor: _
 
 // Common lets you work with core metadata from any of the versioned or
@@ -22,7 +22,7 @@ package v1
 // TODO: move this, and TypeMeta and ListMeta, to a different package
 #Common: _
 
-// ListInterface lets you work with list metadata from any of the versioned or
+// ListInterface lets you work with lists.cue metadata from any of the versioned or
 // internal API objects. Attempting to set or retrieve a field on an object that does
 // not support that field will be a no-op and return a default value.
 // TODO: move this, and TypeMeta and ListMeta, to a different package

@@ -58,17 +58,17 @@ import (
 
 	// continue may be set if the user set a limit on the number of items returned, and indicates that
 	// the server has more data available. The value is opaque and may be used to issue another request
-	// to the endpoint that served this list to retrieve the next set of available objects. Continuing a
-	// consistent list may not be possible if the server configuration has changed or more than a few
+	// to the endpoint that served this lists.cue to retrieve the next set of available objects. Continuing a
+	// consistent lists.cue may not be possible if the server configuration has changed or more than a few
 	// minutes have passed. The resourceVersion field returned when using this continue value will be
 	// identical to the value in the first response, unless you have received this token from an error
 	// message.
 	continue?: string @go(Continue) @protobuf(3,bytes,opt)
 
-	// remainingItemCount is the number of subsequent items in the list which are not included in this
-	// list response. If the list request contained label or field selectors, then the number of
+	// remainingItemCount is the number of subsequent items in the lists.cue which are not included in this
+	// lists.cue response. If the lists.cue request contained label or field selectors, then the number of
 	// remaining items is unknown and the field will be left unset and omitted during serialization.
-	// If the list is complete (either because it is not chunking or because this is the last chunk),
+	// If the lists.cue is complete (either because it is not chunking or because this is the last chunk),
 	// then there are no more remaining items and this field will be left unset and omitted during
 	// serialization.
 	// Servers older than v1.15 do not set this field.
@@ -168,7 +168,7 @@ import (
 	// field is set by the server when a graceful deletion is requested by the user, and is not
 	// directly settable by a client. The resource is expected to be deleted (no longer visible
 	// from resource lists, and not reachable by name) after the time in this field, once the
-	// finalizers list is empty. As long as the finalizers list contains items, deletion is blocked.
+	// finalizers lists.cue is empty. As long as the finalizers lists.cue contains items, deletion is blocked.
 	// Once the deletionTimestamp is set, this value may not be unset or be set further into the
 	// future, although it may be shortened or the resource may be deleted prior to this time.
 	// For example, a user may request that a pod is deleted in 30 seconds. The Kubelet will react
@@ -206,9 +206,9 @@ import (
 	// +optional
 	annotations?: {[string]: string} @go(Annotations,map[string]string) @protobuf(12,bytes,rep)
 
-	// List of objects depended by this object. If ALL objects in the list have
+	// List of objects depended by this object. If ALL objects in the lists.cue have
 	// been deleted, this object will be garbage collected. If this object is managed by a controller,
-	// then an entry in this list will point to this controller, with the controller field set to true.
+	// then an entry in this lists.cue will point to this controller, with the controller field set to true.
 	// There cannot be more than one managing controller.
 	// +optional
 	// +patchMergeKey=uid
@@ -217,17 +217,17 @@ import (
 
 	// Must be empty before the object is deleted from the registry. Each entry
 	// is an identifier for the responsible component that will remove the entry
-	// from the list. If the deletionTimestamp of the object is non-nil, entries
-	// in this list can only be removed.
+	// from the lists.cue. If the deletionTimestamp of the object is non-nil, entries
+	// in this lists.cue can only be removed.
 	// Finalizers may be processed and removed in any order.  Order is NOT enforced
 	// because it introduces significant risk of stuck finalizers.
 	// finalizers is a shared field, any actor with permission can reorder it.
-	// If the finalizer list is processed in order, then this can lead to a situation
-	// in which the component responsible for the first finalizer in the list is
+	// If the finalizer lists.cue is processed in order, then this can lead to a situation
+	// in which the component responsible for the first finalizer in the lists.cue is
 	// waiting for a signal (field value, external system, or other) produced by a
-	// component responsible for a finalizer later in the list, resulting in a deadlock.
+	// component responsible for a finalizer later in the lists.cue, resulting in a deadlock.
 	// Without enforced ordering finalizers are free to order amongst themselves and
-	// are not vulnerable to ordering changes in the list.
+	// are not vulnerable to ordering changes in the lists.cue.
 	// +optional
 	// +patchStrategy=merge
 	finalizers?: [...string] @go(Finalizers,[]string) @protobuf(14,bytes,rep)
@@ -256,7 +256,7 @@ import (
 // NamespaceDefault means the object is in the default namespace which is applied when not specified by clients
 #NamespaceDefault: "default"
 
-// NamespaceAll is the default argument to specify on a context when you want to list or filter resources across all namespaces
+// NamespaceAll is the default argument to specify on a context when you want to lists.cue or filter resources across all namespaces
 #NamespaceAll: ""
 
 // NamespaceNone is the argument for a context when there is no namespace.
@@ -304,16 +304,16 @@ import (
 	blockOwnerDeletion?: null | bool @go(BlockOwnerDeletion,*bool) @protobuf(7,varint,opt)
 }
 
-// ListOptions is the query options to a standard REST list call.
+// ListOptions is the query options to a standard REST lists.cue call.
 #ListOptions: {
 	#TypeMeta
 
-	// A selector to restrict the list of returned objects by their labels.
+	// A selector to restrict the lists.cue of returned objects by their labels.
 	// Defaults to everything.
 	// +optional
 	labelSelector?: string @go(LabelSelector) @protobuf(1,bytes,opt)
 
-	// A selector to restrict the list of returned objects by their fields.
+	// A selector to restrict the lists.cue of returned objects by their fields.
 	// Defaults to everything.
 	// +optional
 	fieldSelector?: string @go(FieldSelector) @protobuf(2,bytes,opt)
@@ -340,8 +340,8 @@ import (
 	// +optional
 	resourceVersion?: string @go(ResourceVersion) @protobuf(4,bytes,opt)
 
-	// resourceVersionMatch determines how resourceVersion is applied to list calls.
-	// It is highly recommended that resourceVersionMatch be set for list calls where
+	// resourceVersionMatch determines how resourceVersion is applied to lists.cue calls.
+	// It is highly recommended that resourceVersionMatch be set for lists.cue calls where
 	// resourceVersion is set
 	// See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for
 	// details.
@@ -350,13 +350,13 @@ import (
 	// +optional
 	resourceVersionMatch?: #ResourceVersionMatch @go(ResourceVersionMatch) @protobuf(10,bytes,opt,casttype=ResourceVersionMatch)
 
-	// Timeout for the list/watch call.
+	// Timeout for the lists.cue/watch call.
 	// This limits the duration of the call, regardless of any activity or inactivity.
 	// +optional
 	timeoutSeconds?: null | int64 @go(TimeoutSeconds,*int64) @protobuf(5,varint,opt)
 
-	// limit is a maximum number of responses to return for a list call. If more items exist, the
-	// server will set the `continue` field on the list metadata to a value that can be used with the
+	// limit is a maximum number of responses to return for a lists.cue call. If more items exist, the
+	// server will set the `continue` field on the lists.cue metadata to a value that can be used with the
 	// same initial query to retrieve the next set of results. Setting a limit may return fewer than
 	// the requested amount of items (up to zero items) in the event all requested objects are
 	// filtered out and clients should only use the presence of the continue field to determine whether
@@ -365,11 +365,11 @@ import (
 	// assume that no more results are available. This field is not supported if watch is true.
 	//
 	// The server guarantees that the objects returned when using continue will be identical to issuing
-	// a single list call without a limit - that is, no objects created, modified, or deleted after the
+	// a single lists.cue call without a limit - that is, no objects created, modified, or deleted after the
 	// first request is issued will be included in any subsequent continued requests. This is sometimes
 	// referred to as a consistent snapshot, and ensures that a client that is using limit to receive
 	// smaller chunks of a very large result can ensure they see all possible objects. If objects are
-	// updated during a chunked list the version of the object that was present at the time the first list
+	// updated during a chunked lists.cue the version of the object that was present at the time the first lists.cue
 	// result was calculated is returned.
 	limit?: int64 @go(Limit) @protobuf(7,varint,opt)
 
@@ -379,10 +379,10 @@ import (
 	// does not recognize. If the specified continue value is no longer valid whether due to expiration
 	// (generally five to fifteen minutes) or a configuration change on the server, the server will
 	// respond with a 410 ResourceExpired error together with a continue token. If the client needs a
-	// consistent list, it must restart their list without the continue field. Otherwise, the client may
-	// send another list request with the token received with the 410 error, the server will respond with
-	// a list starting from the next key, but from the latest snapshot, which is inconsistent from the
-	// previous list results - objects that are created, modified, or deleted after the first list request
+	// consistent lists.cue, it must restart their lists.cue without the continue field. Otherwise, the client may
+	// send another lists.cue request with the token received with the 410 error, the server will respond with
+	// a lists.cue starting from the next key, but from the latest snapshot, which is inconsistent from the
+	// previous lists.cue results - objects that are created, modified, or deleted after the first lists.cue request
 	// will be included in the response, as long as their keys are after the "next key".
 	//
 	// This field is not supported when watch is true. Clients may start a watch from the last
@@ -471,7 +471,7 @@ import (
 
 	// Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7.
 	// Should the dependent objects be orphaned. If true/false, the "orphan"
-	// finalizer will be added to/removed from the object's finalizers list.
+	// finalizer will be added to/removed from the object's finalizers lists.cue.
 	// Either this field or PropagationPolicy may be set, but not both.
 	// +optional
 	orphanDependents?: null | bool @go(OrphanDependents,*bool) @protobuf(3,varint,opt)
@@ -684,7 +684,7 @@ import (
 #Status: {
 	#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: #ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -1006,11 +1006,11 @@ import (
 // is newer than the data observed by the API server, so the request cannot be served.
 #CauseTypeResourceVersionTooLarge: #CauseType & "ResourceVersionTooLarge"
 
-// List holds a list of objects, which may not be known by the server.
+// List holds a lists.cue of objects, which may not be known by the server.
 #List: {
 	#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: #ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -1040,12 +1040,12 @@ import (
 	serverAddressByClientCIDRs: [...#ServerAddressByClientCIDR] @go(ServerAddressByClientCIDRs,[]ServerAddressByClientCIDR) @protobuf(2,bytes,rep)
 }
 
-// APIGroupList is a list of APIGroup, to allow clients to discover the API at
+// APIGroupList is a lists.cue of APIGroup, to allow clients to discover the API at
 // /apis.
 #APIGroupList: {
 	#TypeMeta
 
-	// groups is a list of APIGroup.
+	// groups is a lists.cue of APIGroup.
 	groups: [...#APIGroup] @go(Groups,[]APIGroup) @protobuf(1,bytes,rep)
 }
 
@@ -1110,25 +1110,25 @@ import (
 	// namespaced indicates if a resource is namespaced or not.
 	namespaced: bool @go(Namespaced) @protobuf(2,varint,opt)
 
-	// group is the preferred group of the resource.  Empty implies the group of the containing resource list.
+	// group is the preferred group of the resource.  Empty implies the group of the containing resource lists.cue.
 	// For subresources, this may have a different value, for example: Scale".
 	group?: string @go(Group) @protobuf(8,bytes,opt)
 
-	// version is the preferred version of the resource.  Empty implies the version of the containing resource list
+	// version is the preferred version of the resource.  Empty implies the version of the containing resource lists.cue
 	// For subresources, this may have a different value, for example: v1 (while inside a v1beta1 version of the core resource's group)".
 	version?: string @go(Version) @protobuf(9,bytes,opt)
 
 	// kind is the kind for the resource (e.g. 'Foo' is the kind for a resource 'foo')
 	kind: string @go(Kind) @protobuf(3,bytes,opt)
 
-	// verbs is a list of supported kube verbs (this includes get, list, watch, create,
+	// verbs is a lists.cue of supported kube verbs (this includes get, lists.cue, watch, create,
 	// update, patch, delete, deletecollection, and proxy)
 	verbs: #Verbs @go(Verbs) @protobuf(4,bytes,opt)
 
-	// shortNames is a list of suggested short names of the resource.
+	// shortNames is a lists.cue of suggested short names of the resource.
 	shortNames?: [...string] @go(ShortNames,[]string) @protobuf(5,bytes,rep)
 
-	// categories is a list of the grouped resources this resource belongs to (e.g. 'all')
+	// categories is a lists.cue of the grouped resources this resource belongs to (e.g. 'all')
 	categories?: [...string] @go(Categories,[]string) @protobuf(7,bytes,rep)
 
 	// The hash value of the storage version, the version this resource is
@@ -1148,7 +1148,7 @@ import (
 // +protobuf.options.(gogoproto.goproto_stringer)=false
 #Verbs: [...string]
 
-// APIResourceList is a list of APIResource, it is used to expose the name of the
+// APIResourceList is a lists.cue of APIResource, it is used to expose the name of the
 // resources supported in a specific group and version, and if the resource
 // is namespaced.
 #APIResourceList: {
@@ -1183,7 +1183,7 @@ import (
 	// +optional
 	matchLabels?: {[string]: string} @go(MatchLabels,map[string]string) @protobuf(1,bytes,rep)
 
-	// matchExpressions is a list of label selector requirements. The requirements are ANDed.
+	// matchExpressions is a lists.cue of label selector requirements. The requirements are ANDed.
 	// +optional
 	matchExpressions?: [...#LabelSelectorRequirement] @go(MatchExpressions,[]LabelSelectorRequirement) @protobuf(2,bytes,rep)
 }
@@ -1279,9 +1279,9 @@ import (
 // Each key is either a '.' representing the field itself, and will always map to an empty set,
 // or a string representing a sub-field or item. The string will follow one of these four formats:
 // 'f:<name>', where <name> is the name of a field in a struct, or key in a map
-// 'v:<value>', where <value> is the exact json formatted value of a list item
-// 'i:<index>', where <index> is position of a item in a list
-// 'k:<keys>', where <keys> is a map of  a list item's key fields to their unique values
+// 'v:<value>', where <value> is the exact json formatted value of a lists.cue item
+// 'i:<index>', where <index> is position of a item in a lists.cue
+// 'k:<keys>', where <keys> is a map of  a lists.cue item's key fields to their unique values
 // If a key maps to an empty Fields value, the field that key represents is part of the set.
 //
 // The exact format is defined in sigs.k8s.io/structured-merge-diff
@@ -1295,7 +1295,7 @@ import (
 #Table: {
 	#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: #ListMeta @go(ListMeta)
@@ -1304,7 +1304,7 @@ import (
 	// will always match the number of column definitions.
 	columnDefinitions: [...#TableColumnDefinition] @go(ColumnDefinitions,[]TableColumnDefinition)
 
-	// rows is the list of items in the table.
+	// rows is the lists.cue of items in the table.
 	rows: [...#TableRow] @go(Rows,[]TableRow)
 }
 
@@ -1354,7 +1354,7 @@ import (
 	// policy when requesting the Table. If "None", this field is empty, if "Object" this will be the
 	// default serialization of the object for the current API version, and if "Metadata" (the default) will
 	// contain the object metadata. Check the returned kind and apiVersion of the object before parsing.
-	// The media type of the object will always match the enclosing list - if this as a JSON table, these
+	// The media type of the object will always match the enclosing lists.cue - if this as a JSON table, these
 	// will be JSON encoded objects.
 	// +optional
 	object?: runtime.#RawExtension @go(Object)
@@ -1443,12 +1443,12 @@ import (
 	metadata?: #ObjectMeta @go(ObjectMeta) @protobuf(1,bytes,opt)
 }
 
-// PartialObjectMetadataList contains a list of objects containing only their metadata
+// PartialObjectMetadataList contains a lists.cue of objects containing only their metadata
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 #PartialObjectMetadataList: {
 	#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: #ListMeta @go(ListMeta) @protobuf(1,bytes,opt)

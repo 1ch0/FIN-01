@@ -14,7 +14,7 @@ import (
 // NamespaceDefault means the object is in the default namespace which is applied when not specified by clients
 #NamespaceDefault: "default"
 
-// NamespaceAll is the default argument to specify on a context when you want to list or filter resources across all namespaces
+// NamespaceAll is the default argument to specify on a context when you want to lists.cue or filter resources across all namespaces
 #NamespaceAll: ""
 
 // NamespaceNodeLease is the namespace where we place node lease objects (used for node heartbeats)
@@ -385,7 +385,7 @@ import (
 	// +optional
 	storageClassName?: string @go(StorageClassName) @protobuf(6,bytes,opt)
 
-	// mountOptions is the list of mount options, e.g. ["ro", "soft"]. Not validated - mount will
+	// mountOptions is the lists.cue of mount options, e.g. ["ro", "soft"]. Not validated - mount will
 	// simply fail if one is invalid.
 	// More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#mount-options
 	// +optional
@@ -460,16 +460,16 @@ import (
 	reason?: string @go(Reason) @protobuf(3,bytes,opt)
 }
 
-// PersistentVolumeList is a list of PersistentVolume items.
+// PersistentVolumeList is a lists.cue of PersistentVolume items.
 #PersistentVolumeList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// items is a list of persistent volumes.
+	// items is a lists.cue of persistent volumes.
 	// More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
 	items: [...#PersistentVolume] @go(Items,[]PersistentVolume) @protobuf(2,bytes,rep)
 }
@@ -495,16 +495,16 @@ import (
 	status?: #PersistentVolumeClaimStatus @go(Status) @protobuf(3,bytes,opt)
 }
 
-// PersistentVolumeClaimList is a list of PersistentVolumeClaim items.
+// PersistentVolumeClaimList is a lists.cue of PersistentVolumeClaim items.
 #PersistentVolumeClaimList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// items is a list of persistent volume claims.
+	// items is a lists.cue of persistent volume claims.
 	// More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
 	items: [...#PersistentVolumeClaim] @go(Items,[]PersistentVolumeClaim) @protobuf(2,bytes,rep)
 }
@@ -1931,7 +1931,7 @@ import (
 
 // Represents a projected volume source
 #ProjectedVolumeSource: {
-	// sources is the list of volume projections
+	// sources is the lists.cue of volume projections
 	// +optional
 	sources: [...#VolumeProjection] @go(Sources,[]VolumeProjection) @protobuf(1,bytes,rep)
 
@@ -2672,7 +2672,7 @@ import (
 	// +patchStrategy=merge
 	volumeMounts?: [...#VolumeMount] @go(VolumeMounts,[]VolumeMount) @protobuf(9,bytes,rep)
 
-	// volumeDevices is the list of block devices to be used by the container.
+	// volumeDevices is the lists.cue of block devices to be used by the container.
 	// +patchMergeKey=devicePath
 	// +patchStrategy=merge
 	// +optional
@@ -3083,7 +3083,7 @@ import (
 // by the node selector terms.
 // +structType=atomic
 #NodeSelector: {
-	//Required. A list of node selector terms. The terms are ORed.
+	//Required. A lists.cue of node selector terms. The terms are ORed.
 	nodeSelectorTerms: [...#NodeSelectorTerm] @go(NodeSelectorTerms,[]NodeSelectorTerm) @protobuf(1,bytes,rep)
 }
 
@@ -3092,11 +3092,11 @@ import (
 // The TopologySelectorTerm type implements a subset of the NodeSelectorTerm.
 // +structType=atomic
 #NodeSelectorTerm: {
-	// A list of node selector requirements by node's labels.
+	// A lists.cue of node selector requirements by node's labels.
 	// +optional
 	matchExpressions?: [...#NodeSelectorRequirement] @go(MatchExpressions,[]NodeSelectorRequirement) @protobuf(1,bytes,rep)
 
-	// A list of node selector requirements by node's fields.
+	// A lists.cue of node selector requirements by node's fields.
 	// +optional
 	matchFields?: [...#NodeSelectorRequirement] @go(MatchFields,[]NodeSelectorRequirement) @protobuf(2,bytes,rep)
 }
@@ -3147,7 +3147,7 @@ import (
 // This is an alpha feature and may change in the future.
 // +structType=atomic
 #TopologySelectorTerm: {
-	// A list of topology selector requirements by labels.
+	// A lists.cue of topology selector requirements by labels.
 	// +optional
 	matchLabelExpressions?: [...#TopologySelectorLabelRequirement] @go(MatchLabelExpressions,[]TopologySelectorLabelRequirement) @protobuf(1,bytes,rep)
 }
@@ -3249,10 +3249,10 @@ import (
 	// +optional
 	labelSelector?: null | metav1.#LabelSelector @go(LabelSelector,*metav1.LabelSelector) @protobuf(1,bytes,opt)
 
-	// namespaces specifies a static list of namespace names that the term applies to.
+	// namespaces specifies a static lists.cue of namespace names that the term applies to.
 	// The term is applied to the union of the namespaces listed in this field
 	// and the ones selected by namespaceSelector.
-	// null or empty namespaces list and null namespaceSelector means "this pod's namespace".
+	// null or empty namespaces lists.cue and null namespaceSelector means "this pod's namespace".
 	// +optional
 	namespaces?: [...string] @go(Namespaces,[]string) @protobuf(2,bytes,rep)
 
@@ -3266,7 +3266,7 @@ import (
 	// A label query over the set of namespaces that the term applies to.
 	// The term is applied to the union of the namespaces selected by this field
 	// and the ones listed in the namespaces field.
-	// null selector and null or empty namespaces list means "this pod's namespace".
+	// null selector and null or empty namespaces lists.cue means "this pod's namespace".
 	// An empty selector ({}) matches all namespaces.
 	// +optional
 	namespaceSelector?: null | metav1.#LabelSelector @go(NamespaceSelector,*metav1.LabelSelector) @protobuf(4,bytes,opt)
@@ -3395,7 +3395,7 @@ import (
 
 // PodReadinessGate contains the reference to a pod condition
 #PodReadinessGate: {
-	// ConditionType refers to a condition in the pod's condition list with matching type.
+	// ConditionType refers to a condition in the pod's condition lists.cue with matching type.
 	conditionType: #PodConditionType @go(ConditionType) @protobuf(1,bytes,opt,casttype=PodConditionType)
 }
 
@@ -3434,7 +3434,7 @@ import (
 	containers: [...#Container] @go(Containers,[]Container) @protobuf(2,bytes,rep)
 
 	// List of ephemeral containers run in this pod. Ephemeral containers may be run in an existing
-	// pod to perform user-initiated actions such as debugging. This list cannot be specified when
+	// pod to perform user-initiated actions such as debugging. This lists.cue cannot be specified when
 	// creating a pod, and it cannot be modified by updating the pod spec. In order to add an
 	// ephemeral container to an existing pod, use the pod's ephemeralcontainers subresource.
 	// This field is beta-level and available on clusters that haven't disabled the EphemeralContainers feature gate.
@@ -3537,7 +3537,7 @@ import (
 	// +optional
 	securityContext?: null | #PodSecurityContext @go(SecurityContext,*PodSecurityContext) @protobuf(14,bytes,opt)
 
-	// ImagePullSecrets is an optional list of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec.
+	// ImagePullSecrets is an optional lists.cue of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec.
 	// If specified, these secrets will be passed to individual puller implementations for them to use.
 	// More info: https://kubernetes.io/docs/concepts/containers/images#specifying-imagepullsecrets-on-a-pod
 	// +optional
@@ -3568,7 +3568,7 @@ import (
 	// +optional
 	tolerations?: [...#Toleration] @go(Tolerations,[]Toleration) @protobuf(22,bytes,opt)
 
-	// HostAliases is an optional list of hosts and IPs that will be injected into the pod's hosts
+	// HostAliases is an optional lists.cue of hosts and IPs that will be injected into the pod's hosts
 	// file if specified. This is only valid for non-hostNetwork pods.
 	// +optional
 	// +patchMergeKey=ip
@@ -3892,7 +3892,7 @@ import (
 	// +optional
 	runAsNonRoot?: null | bool @go(RunAsNonRoot,*bool) @protobuf(3,varint,opt)
 
-	// A list of groups applied to the first process run in each container, in addition
+	// A lists.cue of groups applied to the first process run in each container, in addition
 	// to the container's primary GID.  If unspecified, no groups will be added to
 	// any container.
 	// Note that this field cannot be set when spec.os.name is windows.
@@ -3912,7 +3912,7 @@ import (
 	// +optional
 	fsGroup?: null | int64 @go(FSGroup,*int64) @protobuf(5,varint,opt)
 
-	// Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported
+	// Sysctls hold a lists.cue of namespaced sysctls used for the pod. Pods with unsupported
 	// sysctls (by the container runtime) might fail to launch.
 	// Note that this field cannot be set when spec.os.name is windows.
 	// +optional
@@ -3995,19 +3995,19 @@ import (
 // PodDNSConfig defines the DNS parameters of a pod in addition to
 // those generated from DNSPolicy.
 #PodDNSConfig: {
-	// A list of DNS name server IP addresses.
+	// A lists.cue of DNS name server IP addresses.
 	// This will be appended to the base nameservers generated from DNSPolicy.
 	// Duplicated nameservers will be removed.
 	// +optional
 	nameservers?: [...string] @go(Nameservers,[]string) @protobuf(1,bytes,rep)
 
-	// A list of DNS search domains for host-name lookup.
+	// A lists.cue of DNS search domains for host-name lookup.
 	// This will be appended to the base search paths generated from DNSPolicy.
 	// Duplicated search paths will be removed.
 	// +optional
 	searches?: [...string] @go(Searches,[]string) @protobuf(2,bytes,rep)
 
-	// A list of DNS resolver options.
+	// A lists.cue of DNS resolver options.
 	// This will be merged with the base options generated from DNSPolicy.
 	// Duplicated entries will be removed. Resolution options given in Options
 	// will override those that appear in the base DNSPolicy.
@@ -4111,7 +4111,7 @@ import (
 	// +patchStrategy=merge
 	volumeMounts?: [...#VolumeMount] @go(VolumeMounts,[]VolumeMount) @protobuf(9,bytes,rep)
 
-	// volumeDevices is the list of block devices to be used by the container.
+	// volumeDevices is the lists.cue of block devices to be used by the container.
 	// +patchMergeKey=devicePath
 	// +patchStrategy=merge
 	// +optional
@@ -4272,7 +4272,7 @@ import (
 	podIP?: string @go(PodIP) @protobuf(6,bytes,opt)
 
 	// podIPs holds the IP addresses allocated to the pod. If this field is specified, the 0th entry must
-	// match the podIP field. Pods may be allocated at most 1 value for each of IPv4 and IPv6. This list
+	// match the podIP field. Pods may be allocated at most 1 value for each of IPv4 and IPv6. This lists.cue
 	// is empty if no IPs have been allocated yet.
 	// +optional
 	// +patchStrategy=merge
@@ -4284,13 +4284,13 @@ import (
 	// +optional
 	startTime?: null | metav1.#Time @go(StartTime,*metav1.Time) @protobuf(7,bytes,opt)
 
-	// The list has one entry per init container in the manifest. The most recent successful
+	// The lists.cue has one entry per init container in the manifest. The most recent successful
 	// init container will have ready = true, the most recently started container will have
 	// startTime set.
 	// More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status
 	initContainerStatuses?: [...#ContainerStatus] @go(InitContainerStatuses,[]ContainerStatus) @protobuf(10,bytes,rep)
 
-	// The list has one entry per container in the manifest.
+	// The lists.cue has one entry per container in the manifest.
 	// More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status
 	// +optional
 	containerStatuses?: [...#ContainerStatus] @go(ContainerStatuses,[]ContainerStatus) @protobuf(8,bytes,rep)
@@ -4349,11 +4349,11 @@ import (
 	status?: #PodStatus @go(Status) @protobuf(3,bytes,opt)
 }
 
-// PodList is a list of Pods.
+// PodList is a lists.cue of Pods.
 #PodList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -4391,11 +4391,11 @@ import (
 	template?: #PodTemplateSpec @go(Template) @protobuf(2,bytes,opt)
 }
 
-// PodTemplateList is a list of PodTemplates.
+// PodTemplateList is a lists.cue of PodTemplates.
 #PodTemplateList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -4524,7 +4524,7 @@ import (
 #ReplicationControllerList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -4646,7 +4646,7 @@ import (
 
 // LoadBalancerStatus represents the status of a load-balancer.
 #LoadBalancerStatus: {
-	// Ingress is a list containing ingress points for the load-balancer.
+	// Ingress is a lists.cue containing ingress points for the load-balancer.
 	// Traffic intended for the service should be sent to these ingress points.
 	// +optional
 	ingress?: [...#LoadBalancerIngress] @go(Ingress,[]LoadBalancerIngress) @protobuf(1,bytes,rep)
@@ -4665,7 +4665,7 @@ import (
 	// +optional
 	hostname?: string @go(Hostname) @protobuf(2,bytes,opt)
 
-	// Ports is a list of records of service ports
+	// Ports is a lists.cue of records of service ports
 	// If used, every port defined in the service should have an entry in it
 	// +listType=atomic
 	// +optional
@@ -4718,7 +4718,7 @@ import (
 
 // ServiceSpec describes the attributes that a user creates on a service.
 #ServiceSpec: {
-	// The list of ports that are exposed by this service.
+	// The lists.cue of ports that are exposed by this service.
 	// More info: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
 	// +patchMergeKey=port
 	// +patchStrategy=merge
@@ -4755,7 +4755,7 @@ import (
 	// +optional
 	clusterIP?: string @go(ClusterIP) @protobuf(3,bytes,opt)
 
-	// ClusterIPs is a list of IP addresses assigned to this service, and are
+	// ClusterIPs is a lists.cue of IP addresses assigned to this service, and are
 	// usually assigned randomly.  If an address is specified manually, is
 	// in-range (as per system configuration), and is not in use, it will be
 	// allocated to the service; otherwise creation of the service will fail.
@@ -4801,7 +4801,7 @@ import (
 	// +optional
 	type?: #ServiceType @go(Type) @protobuf(4,bytes,opt,casttype=ServiceType)
 
-	// externalIPs is a list of IP addresses for which nodes in the cluster
+	// externalIPs is a lists.cue of IP addresses for which nodes in the cluster
 	// will also accept traffic for this service.  These IPs are not managed by
 	// Kubernetes.  The user is responsible for ensuring that traffic arrives
 	// at a node with this IP.  A common example is external load-balancers
@@ -4878,7 +4878,7 @@ import (
 	// +optional
 	sessionAffinityConfig?: null | #SessionAffinityConfig @go(SessionAffinityConfig,*SessionAffinityConfig) @protobuf(14,bytes,opt)
 
-	// IPFamilies is a list of IP families (e.g. IPv4, IPv6) assigned to this
+	// IPFamilies is a lists.cue of IP families (e.g. IPv4, IPv6) assigned to this
 	// service. This field is usually assigned automatically based on cluster
 	// configuration and the ipFamilyPolicy field. If this field is specified
 	// manually, the requested family is available in the cluster,
@@ -5024,11 +5024,11 @@ import (
 // no proxying required and no environment variables should be created for pods
 #ClusterIPNone: "None"
 
-// ServiceList holds a list of services.
+// ServiceList holds a lists.cue of services.
 #ServiceList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -5049,8 +5049,8 @@ import (
 	// +optional
 	metadata?: metav1.#ObjectMeta @go(ObjectMeta) @protobuf(1,bytes,opt)
 
-	// Secrets is a list of the secrets in the same namespace that pods running using this ServiceAccount are allowed to use.
-	// Pods are only limited to this list if this service account has a "kubernetes.io/enforce-mountable-secrets" annotation set to "true".
+	// Secrets is a lists.cue of the secrets in the same namespace that pods running using this ServiceAccount are allowed to use.
+	// Pods are only limited to this lists.cue if this service account has a "kubernetes.io/enforce-mountable-secrets" annotation set to "true".
 	// This field should not be used to find auto-generated service account token secrets for use outside of pods.
 	// Instead, tokens can be requested directly using the TokenRequest API, or service account token secrets can be manually created.
 	// More info: https://kubernetes.io/docs/concepts/configuration/secret
@@ -5059,7 +5059,7 @@ import (
 	// +patchStrategy=merge
 	secrets?: [...#ObjectReference] @go(Secrets,[]ObjectReference) @protobuf(2,bytes,rep)
 
-	// ImagePullSecrets is a list of references to secrets in the same namespace to use for pulling any images
+	// ImagePullSecrets is a lists.cue of references to secrets in the same namespace to use for pulling any images
 	// in pods that reference this ServiceAccount. ImagePullSecrets are distinct from Secrets because Secrets
 	// can be mounted in the pod, but ImagePullSecrets are only accessed by the kubelet.
 	// More info: https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
@@ -5072,11 +5072,11 @@ import (
 	automountServiceAccountToken?: null | bool @go(AutomountServiceAccountToken,*bool) @protobuf(4,varint,opt)
 }
 
-// ServiceAccountList is a list of ServiceAccount objects
+// ServiceAccountList is a lists.cue of ServiceAccount objects
 #ServiceAccountList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -5197,11 +5197,11 @@ import (
 	appProtocol?: null | string @go(AppProtocol,*string) @protobuf(4,bytes,opt)
 }
 
-// EndpointsList is a list of endpoints.
+// EndpointsList is a lists.cue of endpoints.
 #EndpointsList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -5456,7 +5456,7 @@ import (
 // Node annotation with key scheduler.alpha.kubernetes.io/preferAvoidPods and
 // will eventually become a field of NodeStatus.
 #AvoidPods: {
-	// Bounded-sized list of signatures of pods that should avoid this node, sorted
+	// Bounded-sized lists.cue of signatures of pods that should avoid this node, sorted
 	// in timestamp order from oldest to newest. Size of the slice is unspecified.
 	// +optional
 	preferAvoidPods?: [...#PreferAvoidPodsEntry] @go(PreferAvoidPods,[]PreferAvoidPodsEntry) @protobuf(1,bytes,rep)
@@ -5467,15 +5467,15 @@ import (
 	// The class of pods.
 	podSignature: #PodSignature @go(PodSignature) @protobuf(1,bytes,opt)
 
-	// Time at which this entry was added to the list.
+	// Time at which this entry was added to the lists.cue.
 	// +optional
 	evictionTime?: metav1.#Time @go(EvictionTime) @protobuf(2,bytes,opt)
 
-	// (brief) reason why this entry was added to the list.
+	// (brief) reason why this entry was added to the lists.cue.
 	// +optional
 	reason?: string @go(Reason) @protobuf(3,bytes,opt)
 
-	// Human readable message indicating why this entry was added to the list.
+	// Human readable message indicating why this entry was added to the lists.cue.
 	// +optional
 	message?: string @go(Message) @protobuf(4,bytes,opt)
 }
@@ -5696,11 +5696,11 @@ import (
 	status?: #NodeStatus @go(Status) @protobuf(3,bytes,opt)
 }
 
-// NodeList is the whole list of all Nodes which have been registered with master.
+// NodeList is the whole lists.cue of all Nodes which have been registered with master.
 #NodeList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -5719,7 +5719,7 @@ import (
 
 // NamespaceSpec describes the attributes on a Namespace.
 #NamespaceSpec: {
-	// Finalizers is an opaque list of values that must be empty to permanently remove object from storage.
+	// Finalizers is an opaque lists.cue of values that must be empty to permanently remove object from storage.
 	// More info: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
 	// +optional
 	finalizers?: [...#FinalizerName] @go(Finalizers,[]FinalizerName) @protobuf(1,bytes,rep,casttype=FinalizerName)
@@ -5819,16 +5819,16 @@ import (
 	status?: #NamespaceStatus @go(Status) @protobuf(3,bytes,opt)
 }
 
-// NamespaceList is a list of Namespaces.
+// NamespaceList is a lists.cue of Namespaces.
 #NamespaceList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// Items is the list of Namespace objects in the list.
+	// Items is the lists.cue of Namespace objects in the lists.cue.
 	// More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
 	items: [...#Namespace] @go(Items,[]Namespace) @protobuf(2,bytes,rep)
 }
@@ -6221,11 +6221,11 @@ import (
 	lastObservedTime?: metav1.#MicroTime @go(LastObservedTime) @protobuf(2,bytes)
 }
 
-// EventList is a list of events.
+// EventList is a lists.cue of events.
 #EventList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -6234,7 +6234,7 @@ import (
 	items: [...#Event] @go(Items,[]Event) @protobuf(2,bytes,rep)
 }
 
-// List holds a list of objects, which may not be known by the server.
+// List holds a lists.cue of objects, which may not be known by the server.
 #List: metav1.#List
 
 // LimitType is a type of object that is limited. It can be Pod, Container, PersistentVolumeClaim or
@@ -6283,7 +6283,7 @@ import (
 
 // LimitRangeSpec defines a min/max usage limit for resources that match on kind.
 #LimitRangeSpec: {
-	// Limits is the list of LimitRangeItem objects that are enforced.
+	// Limits is the lists.cue of LimitRangeItem objects that are enforced.
 	limits: [...#LimitRangeItem] @go(Limits,[]LimitRangeItem) @protobuf(1,bytes,rep)
 }
 
@@ -6302,16 +6302,16 @@ import (
 	spec?: #LimitRangeSpec @go(Spec) @protobuf(2,bytes,opt)
 }
 
-// LimitRangeList is a list of LimitRange items.
+// LimitRangeList is a lists.cue of LimitRange items.
 #LimitRangeList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// Items is a list of LimitRange objects.
+	// Items is a lists.cue of LimitRange objects.
 	// More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
 	items: [...#LimitRange] @go(Items,[]LimitRange) @protobuf(2,bytes,rep)
 }
@@ -6424,7 +6424,7 @@ import (
 // by the scoped-resource selector requirements.
 // +structType=atomic
 #ScopeSelector: {
-	// A list of scope selector requirements by scope of the resources.
+	// A lists.cue of scope selector requirements by scope of the resources.
 	// +optional
 	matchExpressions?: [...#ScopedResourceSelectorRequirement] @go(MatchExpressions,[]ScopedResourceSelectorRequirement) @protobuf(1,bytes,rep)
 }
@@ -6495,16 +6495,16 @@ import (
 	status?: #ResourceQuotaStatus @go(Status) @protobuf(3,bytes,opt)
 }
 
-// ResourceQuotaList is a list of ResourceQuota items.
+// ResourceQuotaList is a lists.cue of ResourceQuota items.
 #ResourceQuotaList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// Items is a list of ResourceQuota objects.
+	// Items is a lists.cue of ResourceQuota objects.
 	// More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
 	items: [...#ResourceQuota] @go(Items,[]ResourceQuota) @protobuf(2,bytes,rep)
 }
@@ -6651,16 +6651,16 @@ import (
 // ConfigMaps. They are used for authn.
 #SecretTypeBootstrapToken: #SecretType & "bootstrap.kubernetes.io/token"
 
-// SecretList is a list of Secret.
+// SecretList is a lists.cue of Secret.
 #SecretList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// Items is a list of secret objects.
+	// Items is a lists.cue of secret objects.
 	// More info: https://kubernetes.io/docs/concepts/configuration/secret
 	items: [...#Secret] @go(Items,[]Secret) @protobuf(2,bytes,rep)
 }
@@ -6700,7 +6700,7 @@ import (
 	binaryData?: {[string]: bytes} @go(BinaryData,map[string][]byte) @protobuf(3,bytes,rep)
 }
 
-// ConfigMapList is a resource containing a list of ConfigMap objects.
+// ConfigMapList is a resource containing a lists.cue of ConfigMap objects.
 #ConfigMapList: {
 	metav1.#TypeMeta
 
@@ -6708,7 +6708,7 @@ import (
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// Items is the list of ConfigMaps.
+	// Items is the lists.cue of ConfigMaps.
 	items: [...#ConfigMap] @go(Items,[]ConfigMap) @protobuf(2,bytes,rep)
 }
 
@@ -6758,12 +6758,12 @@ import (
 	conditions?: [...#ComponentCondition] @go(Conditions,[]ComponentCondition) @protobuf(2,bytes,rep)
 }
 
-// Status of all the conditions for the component as a list of ComponentStatus objects.
+// Status of all the conditions for the component as a lists.cue of ComponentStatus objects.
 // Deprecated: This API is deprecated in v1.19+
 #ComponentStatusList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -6775,7 +6775,7 @@ import (
 // DownwardAPIVolumeSource represents a volume containing downward API info.
 // Downward API volumes support ownership management and SELinux relabeling.
 #DownwardAPIVolumeSource: {
-	// Items is a list of downward API volume file
+	// Items is a lists.cue of downward API volume file
 	// +optional
 	items?: [...#DownwardAPIVolumeFile] @go(Items,[]DownwardAPIVolumeFile) @protobuf(1,bytes,rep)
 
@@ -6821,7 +6821,7 @@ import (
 // Note that this is identical to a downwardAPI volume source without the default
 // mode.
 #DownwardAPIProjection: {
-	// Items is a list of DownwardAPIVolume file
+	// Items is a lists.cue of DownwardAPIVolume file
 	// +optional
 	items?: [...#DownwardAPIVolumeFile] @go(Items,[]DownwardAPIVolumeFile) @protobuf(1,bytes,rep)
 }

@@ -6,7 +6,7 @@
 #Meta: {
     // string and a semver regex
     version: string & =~"^v[0-9]+\\.[0-9]+\\.[0-9]+$"
-    // list.cue of strings
+    // lists.cue.cue of strings
     labels: [...string]
 }
 

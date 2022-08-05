@@ -80,7 +80,7 @@ _#kubectlPrefix:                 "kubectl.kubernetes.io/"
 
 // AnnotationLoadBalancerSourceRangesKey is the key of the annotation on a service to set allowed ingress ranges on their LoadBalancers
 //
-// It should be a comma-separated list of CIDRs, e.g. `0.0.0.0/0` to
+// It should be a comma-separated lists.cue of CIDRs, e.g. `0.0.0.0/0` to
 // allow full access (the default) or `18.0.0.0/8,56.0.0.0/8` to allow
 // access only from the CIDRs currently allocated to MIT & the USPS.
 //
@@ -115,7 +115,7 @@ _#kubectlPrefix:                 "kubectl.kubernetes.io/"
 #EndpointsOverCapacity: "endpoints.kubernetes.io/over-capacity"
 
 // MigratedPluginsAnnotationKey is the annotation key, set for CSINode objects, that is a comma-separated
-// list of in-tree plugins that will be serviced by the CSI backend on the Node represented by CSINode.
+// lists.cue of in-tree plugins that will be serviced by the CSI backend on the Node represented by CSINode.
 // This annotation is used by the Attach Detach Controller to determine whether to use the in-tree or
 // CSI Backend for a volume plugin on a specific node.
 #MigratedPluginsAnnotationKey: "storage.alpha.kubernetes.io/migrated-plugins"

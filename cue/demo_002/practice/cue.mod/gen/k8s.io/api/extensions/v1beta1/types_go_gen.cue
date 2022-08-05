@@ -293,15 +293,15 @@ import (
 	message?: string @go(Message) @protobuf(5,bytes,opt)
 }
 
-// DeploymentList is a list of Deployments.
+// DeploymentList is a lists.cue of Deployments.
 #DeploymentList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// Items is the list of Deployments.
+	// Items is the lists.cue of Deployments.
 	items: [...#Deployment] @go(Items,[]Deployment) @protobuf(2,bytes,rep)
 }
 
@@ -534,12 +534,12 @@ import (
 #DaemonSetList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// A list of daemon sets.
+	// A lists.cue of daemon sets.
 	items: [...#DaemonSet] @go(Items,[]DaemonSet) @protobuf(2,bytes,rep)
 }
 
@@ -576,7 +576,7 @@ import (
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// Items is the list of Ingress.
+	// Items is the lists.cue of Ingress.
 	items: [...#Ingress] @go(Items,[]Ingress) @protobuf(2,bytes,rep)
 }
 
@@ -603,14 +603,14 @@ import (
 	backend?: null | #IngressBackend @go(Backend,*IngressBackend) @protobuf(1,bytes,opt)
 
 	// TLS configuration. Currently the Ingress only supports a single TLS
-	// port, 443. If multiple members of this list specify different hosts, they
+	// port, 443. If multiple members of this lists.cue specify different hosts, they
 	// will be multiplexed on the same port according to the hostname specified
 	// through the SNI TLS extension, if the ingress controller fulfilling the
 	// ingress supports SNI.
 	// +optional
 	tls?: [...#IngressTLS] @go(TLS,[]IngressTLS) @protobuf(2,bytes,rep)
 
-	// A list of host rules used to configure the Ingress. If unspecified, or
+	// A lists.cue of host rules used to configure the Ingress. If unspecified, or
 	// no rule matches, all traffic is sent to the default backend.
 	// +optional
 	rules?: [...#IngressRule] @go(Rules,[]IngressRule) @protobuf(3,bytes,rep)
@@ -618,8 +618,8 @@ import (
 
 // IngressTLS describes the transport layer security associated with an Ingress.
 #IngressTLS: {
-	// Hosts are a list of hosts included in the TLS certificate. The values in
-	// this list must match the name/s used in the tlsSecret. Defaults to the
+	// Hosts are a lists.cue of hosts included in the TLS certificate. The values in
+	// this lists.cue must match the name/s used in the tlsSecret. Defaults to the
 	// wildcard host setting for the loadbalancer controller fulfilling this
 	// Ingress, if left unspecified.
 	// +optional
@@ -678,7 +678,7 @@ import (
 // mixing different types of rules in a single Ingress is disallowed, so exactly
 // one of the following must be set.
 #IngressRuleValue: {
-	// http is a list of http selectors pointing to backends.
+	// http is a lists.cue of http selectors pointing to backends.
 	// A path is matched against the path of an incoming request. Currently it can
 	// contain characters disallowed from the conventional "path" part of a URL
 	// as defined by RFC 3986. Paths must begin with a '/'.
@@ -687,7 +687,7 @@ import (
 	http?: null | #HTTPIngressRuleValue @go(HTTP,*HTTPIngressRuleValue) @protobuf(1,bytes,opt)
 }
 
-// HTTPIngressRuleValue is a list of http selectors pointing to backends.
+// HTTPIngressRuleValue is a lists.cue of http selectors pointing to backends.
 // In the example: http://<host>/<path>?<searchpart> -> backend where
 // where parts of the url correspond to RFC 3986, this resource will be used
 // to match against everything after the last '/' and before the first '?'
@@ -710,7 +710,7 @@ import (
 
 // PathTypePrefix matches based on a URL path prefix split by '/'. Matching
 // is case sensitive and done on a path element by element basis. A path
-// element refers to the list of labels in the path split by the '/'
+// element refers to the lists.cue of labels in the path split by the '/'
 // separator. A request is a match for path p if every p is an element-wise
 // prefix of p of the request path. Note that if the last element of the
 // path is a substring of the last element in request path, it is not a
@@ -745,7 +745,7 @@ import (
 	// * Exact: Matches the URL path exactly.
 	// * Prefix: Matches based on a URL path prefix split by '/'. Matching is
 	//   done on a path element by element basis. A path element refers is the
-	//   list of labels in the path split by the '/' separator. A request is a
+	//   lists.cue of labels in the path split by the '/' separator. A request is a
 	//   match for path p if every p is an element-wise prefix of p of the
 	//   request path. Note that if the last element of the path is a substring
 	//   of the last element in request path, it is not a match (e.g. /foo/bar
@@ -809,7 +809,7 @@ import (
 #ReplicaSetList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
@@ -932,9 +932,9 @@ import (
 	privileged?: bool @go(Privileged) @protobuf(1,varint,opt)
 
 	// defaultAddCapabilities is the default set of capabilities that will be added to the container
-	// unless the pod spec specifically drops the capability.  You may not list a capability in both
+	// unless the pod spec specifically drops the capability.  You may not lists.cue a capability in both
 	// defaultAddCapabilities and requiredDropCapabilities. Capabilities added here are implicitly
-	// allowed, and need not be included in the allowedCapabilities list.
+	// allowed, and need not be included in the allowedCapabilities lists.cue.
 	// +optional
 	defaultAddCapabilities?: [...v1.#Capability] @go(DefaultAddCapabilities,[]v1.Capability) @protobuf(2,bytes,rep,casttype=k8s.io/api/core/v1.Capability)
 
@@ -943,9 +943,9 @@ import (
 	// +optional
 	requiredDropCapabilities?: [...v1.#Capability] @go(RequiredDropCapabilities,[]v1.Capability) @protobuf(3,bytes,rep,casttype=k8s.io/api/core/v1.Capability)
 
-	// allowedCapabilities is a list of capabilities that can be requested to add to the container.
+	// allowedCapabilities is a lists.cue of capabilities that can be requested to add to the container.
 	// Capabilities in this field may be added at the pod author's discretion.
-	// You must not list a capability in both allowedCapabilities and requiredDropCapabilities.
+	// You must not lists.cue a capability in both allowedCapabilities and requiredDropCapabilities.
 	// +optional
 	allowedCapabilities?: [...v1.#Capability] @go(AllowedCapabilities,[]v1.Capability) @protobuf(4,bytes,rep,casttype=k8s.io/api/core/v1.Capability)
 
@@ -1022,7 +1022,7 @@ import (
 	// +optional
 	allowedCSIDrivers?: [...#AllowedCSIDriver] @go(AllowedCSIDrivers,[]AllowedCSIDriver) @protobuf(23,bytes,rep)
 
-	// allowedUnsafeSysctls is a list of explicitly allowed unsafe sysctls, defaults to none.
+	// allowedUnsafeSysctls is a lists.cue of explicitly allowed unsafe sysctls, defaults to none.
 	// Each entry is either a plain sysctl name or ends in "*" in which case it is considered
 	// as a prefix of allowed sysctls. Single * means all unsafe sysctls are allowed.
 	// Kubelet has to allowlist all unsafe sysctls explicitly to avoid rejection.
@@ -1033,7 +1033,7 @@ import (
 	// +optional
 	allowedUnsafeSysctls?: [...string] @go(AllowedUnsafeSysctls,[]string) @protobuf(19,bytes,rep)
 
-	// forbiddenSysctls is a list of explicitly forbidden sysctls, defaults to none.
+	// forbiddenSysctls is a lists.cue of explicitly forbidden sysctls, defaults to none.
 	// Each entry is either a plain sysctl name or ends in "*" in which case it is considered
 	// as a prefix of forbidden sysctls. Single * means all sysctls are forbidden.
 	//
@@ -1323,11 +1323,11 @@ import (
 #RuntimeClassStrategyOptions: {
 	// allowedRuntimeClassNames is an allowlist of RuntimeClass names that may be specified on a pod.
 	// A value of "*" means that any RuntimeClass name is allowed, and must be the only item in the
-	// list. An empty list requires the RuntimeClassName field to be unset.
+	// lists.cue. An empty lists.cue requires the RuntimeClassName field to be unset.
 	allowedRuntimeClassNames: [...string] @go(AllowedRuntimeClassNames,[]string) @protobuf(1,bytes,rep)
 
 	// defaultRuntimeClassName is the default RuntimeClassName to set on the pod.
-	// The default MUST be allowed by the allowedRuntimeClassNames list.
+	// The default MUST be allowed by the allowedRuntimeClassNames lists.cue.
 	// A value of nil does not mutate the Pod.
 	// +optional
 	defaultRuntimeClassName?: null | string @go(DefaultRuntimeClassName,*string) @protobuf(2,bytes,opt)
@@ -1335,17 +1335,17 @@ import (
 
 #AllowAllRuntimeClassNames: "*"
 
-// PodSecurityPolicyList is a list of PodSecurityPolicy objects.
+// PodSecurityPolicyList is a lists.cue of PodSecurityPolicy objects.
 // Deprecated: use PodSecurityPolicyList from policy API Group instead.
 #PodSecurityPolicyList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// items is a list of schema objects.
+	// items is a lists.cue of schema objects.
 	items: [...#PodSecurityPolicy] @go(Items,[]PodSecurityPolicy) @protobuf(2,bytes,rep)
 }
 
@@ -1431,18 +1431,18 @@ import (
 // This NetworkPolicyIngressRule matches traffic if and only if the traffic matches both ports AND from.
 #NetworkPolicyIngressRule: {
 	// List of ports which should be made accessible on the pods selected for this rule.
-	// Each item in this list is combined using a logical OR.
+	// Each item in this lists.cue is combined using a logical OR.
 	// If this field is empty or missing, this rule matches all ports (traffic not restricted by port).
 	// If this field is present and contains at least one item, then this rule allows traffic
-	// only if the traffic matches at least one port in the list.
+	// only if the traffic matches at least one port in the lists.cue.
 	// +optional
 	ports?: [...#NetworkPolicyPort] @go(Ports,[]NetworkPolicyPort) @protobuf(1,bytes,rep)
 
 	// List of sources which should be able to access the pods selected for this rule.
-	// Items in this list are combined using a logical OR operation.
+	// Items in this lists.cue are combined using a logical OR operation.
 	// If this field is empty or missing, this rule matches all sources (traffic not restricted by source).
 	// If this field is present and contains at least one item, this rule allows traffic only if the
-	// traffic matches at least one item in the from list.
+	// traffic matches at least one item in the from lists.cue.
 	// +optional
 	from?: [...#NetworkPolicyPeer] @go(From,[]NetworkPolicyPeer) @protobuf(2,bytes,rep)
 }
@@ -1453,18 +1453,18 @@ import (
 // This type is beta-level in 1.8
 #NetworkPolicyEgressRule: {
 	// List of destination ports for outgoing traffic.
-	// Each item in this list is combined using a logical OR. If this field is
+	// Each item in this lists.cue is combined using a logical OR. If this field is
 	// empty or missing, this rule matches all ports (traffic not restricted by port).
 	// If this field is present and contains at least one item, then this rule allows
-	// traffic only if the traffic matches at least one port in the list.
+	// traffic only if the traffic matches at least one port in the lists.cue.
 	// +optional
 	ports?: [...#NetworkPolicyPort] @go(Ports,[]NetworkPolicyPort) @protobuf(1,bytes,rep)
 
 	// List of destinations for outgoing traffic of pods selected for this rule.
-	// Items in this list are combined using a logical OR operation. If this field is
+	// Items in this lists.cue are combined using a logical OR operation. If this field is
 	// empty or missing, this rule matches all destinations (traffic not restricted by
 	// destination). If this field is present and contains at least one item, this rule
-	// allows traffic only if the traffic matches at least one item in the to list.
+	// allows traffic only if the traffic matches at least one item in the to lists.cue.
 	// +optional
 	to?: [...#NetworkPolicyPeer] @go(To,[]NetworkPolicyPeer) @protobuf(2,bytes,rep)
 }
@@ -1582,15 +1582,15 @@ import (
 }
 
 // DEPRECATED 1.9 - This group version of NetworkPolicyList is deprecated by networking/v1/NetworkPolicyList.
-// Network Policy List is a list of NetworkPolicy objects.
+// Network Policy List is a lists.cue of NetworkPolicy objects.
 #NetworkPolicyList: {
 	metav1.#TypeMeta
 
-	// Standard list metadata.
+	// Standard lists.cue metadata.
 	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	metadata?: metav1.#ListMeta @go(ListMeta) @protobuf(1,bytes,opt)
 
-	// Items is a list of schema objects.
+	// Items is a lists.cue of schema objects.
 	items: [...#NetworkPolicy] @go(Items,[]NetworkPolicy) @protobuf(2,bytes,rep)
 }
