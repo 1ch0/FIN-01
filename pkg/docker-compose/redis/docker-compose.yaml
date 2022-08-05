@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  cache:
+    image: redis
+    #   image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '56379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass KVge8oLd2t8eYVX7EwVmmxKPCDmwMty1
+    volumes:
+      - cache:/data
+    environment:
+      - TZ=Asia/Shanghai
+volumes:
+  cache:
+    driver: local
