@@ -1,27 +1,27 @@
 #labels: [string]: string
 
 #metadata: {
-	name: string
+	name:   string
 	labels: #labels
 	annotations?: [string]: string
 }
 
 #requiredLabels: #labels & {
-	app: string
-	env: string
+	app:  string
+	env:  string
 	team: string
 }
 
 #defaultLabels: #requiredLabels & {
-	env: *"dev"| "stg" | "prd"
+	env: *"dev" | "stg" | "prd"
 }
 
 #myLabels: #defaultLabels & {
-	app: "cuetorials"
+	app:  "cuetorials"
 	team: "hifstadter"
 }
 
-#Schema: #Deployment | #Service |#Ingress
+#Schema: #Deployment | #Service | #Ingress
 
 #Schema: {
 	metadata: #metadata & {

@@ -1,4 +1,3 @@
-
 package stdlib
 
 import "strings"
