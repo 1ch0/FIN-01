@@ -1,6 +1,6 @@
 BINARY = server
 IMAGE_REGISTRY = harbor.1ch0.com
-IMAGE_REPO = infra/server
+IMAGE_REPO = 1ch0/server
 IMAGE_TAG = latest
 
 .PHONY: vendor build image release
