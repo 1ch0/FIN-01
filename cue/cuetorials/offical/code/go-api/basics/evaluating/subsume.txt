@@ -1,0 +1,25 @@
+c > sn:
+field i not present in {i:number,s:string}:
+    schema_number.cue:2:1
+missing field "i"
+
+v > sn:
+field i not present in {i:number,s:string}:
+    schema_number.cue:2:1
+missing field "i"
+
+si > c:
+field i not present in {i:>10,s:=~"^foo"}:
+    constraint.cue:2:1
+missing field "i"
+
+c > si:
+field i not present in {i:int,s:string}:
+    schema_int.cue:2:1
+missing field "i"
+
+v > si:
+field i not present in {i:int,s:string}:
+    schema_int.cue:2:1
+missing field "i"
+
