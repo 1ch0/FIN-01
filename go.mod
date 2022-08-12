@@ -23,6 +23,7 @@ require (
 	go.uber.org/zap v1.21.0
 	golang.org/x/oauth2 v0.0.0-20220622183110-fd043fe589d2
 	google.golang.org/protobuf v1.28.0
+	gotest.tools v2.2.0+incompatible
 )
 
 require (
