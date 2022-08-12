@@ -22,7 +22,7 @@ func incr() {
 	resp := client.SetNX(lockKey, 1, time.Second*5)
 	lockSuccess, err := resp.Result()
 	if err != nil || !lockSuccess {
-		fmt.Println(err, "lock rsult: ", lockSuccess)
+		fmt.Println(err, "lock result: ", lockSuccess)
 		return
 	}
 
