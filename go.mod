@@ -33,7 +33,9 @@ require (
 	github.com/antchfx/xmlquery v1.3.12 // indirect
 	github.com/antchfx/xpath v1.2.1 // indirect
 	github.com/bwmarrin/snowflake v0.3.0 // indirect
+	github.com/bytedance/sonic v1.3.5 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/chenzhuoyu/base64x v0.0.0-20211019084208-fb5309c8db06 // indirect
 	github.com/cockroachdb/apd/v2 v2.0.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
@@ -62,6 +64,7 @@ require (
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
 	github.com/kennygrant/sanitize v1.2.4 // indirect
 	github.com/klauspost/compress v1.15.7 // indirect
+	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
 	github.com/lib/pq v1.10.6 // indirect
 	github.com/magiconair/properties v1.8.6 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
@@ -82,12 +85,14 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/subosito/gotenv v1.3.0 // indirect
 	github.com/temoto/robotstxt v1.1.2 // indirect
+	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
 	github.com/xdg-go/scram v1.1.1 // indirect
 	github.com/xdg-go/stringprep v1.0.3 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20181117223130-1be2e3e5546d // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
+	golang.org/x/arch v0.0.0-20210923205945-b76863e36670 // indirect
 	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa // indirect
 	golang.org/x/net v0.0.0-20220706163947-c90051bbdb60 // indirect
 	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f // indirect
