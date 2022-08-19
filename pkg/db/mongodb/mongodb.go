@@ -24,6 +24,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	// ping 成功才代表连接成功
+	err = client.Ping(context.Background(), nil)
 	defer func() {
 		if err := client.Disconnect(ctx); err != nil {
 			log.Fatal(err)
