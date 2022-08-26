@@ -5,8 +5,8 @@ services:
     #   image: redis:6.2-alpine
     restart: always
     ports:
-      - '56379:6379'
-    command: redis-server --save 20 1 --loglevel warning --requirepass KVge8oLd2t8eYVX7EwVmmxKPCDmwMty1
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass yourpassword
     volumes:
       - cache:/data
     environment:
