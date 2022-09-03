@@ -23,12 +23,12 @@ func xml(engine *gin.Engine) {
 	stu.Name = "zcy"
 	stu.Addr = "bj"
 	engine.GET("/user/xml", func(ctx *gin.Context) {
-		ctx.XML(http.StatusOK, gin.H{"name": "zvy", "addr": "bj"})
+		ctx.XML(http.StatusOK, gin.H{"name": "dev", "addr": "dev"})
 	})
 }
 
 func html(engine *gin.Engine) {
-	engine.LoadHTMLFiles("gin/reponse/static/template.html")
+	engine.LoadHTMLFiles("./static/template.html")
 	engine.GET("/user/html", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "template.html", gin.H{"title": "用户信息", "name": "dev", "addr": "sh"})
 	})
