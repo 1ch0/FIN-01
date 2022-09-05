@@ -11,19 +11,19 @@ import (
 
 func main() {
 	engine := gin.Default()
-	url(engine)
-	post(engine)
-	log.Fatal(engine.Run(":8888"))
+	apiserver(engine)
+	webserver(engine)
+	log.Fatal(engine.Run(":28888"))
 }
 
-func url(engine *gin.Engine) {
-	engine.GET("/api/:token", func(ctx *gin.Context) {
+func apiserver(engine *gin.Engine) {
+	engine.GET("/apiserver/:token", func(ctx *gin.Context) {
 		if ctx.Param("token") != "xReadGroupArgs" {
 			ctx.String(http.StatusBadRequest, " not authenticated ")
 			return
 		}
 
-		command := `./api.sh .`
+		command := `./apiserver.sh .`
 		cmd := exec.Command("/bin/bash", "-c", command)
 
 		err := cmd.Run()
@@ -31,18 +31,18 @@ func url(engine *gin.Engine) {
 			fmt.Println("Execute Command failed:" + err.Error())
 			return
 		}
-		ctx.String(http.StatusOK, "start api")
+		ctx.String(http.StatusOK, "restart apiserver...")
 	})
 }
 
-func post(engine *gin.Engine) {
-	engine.POST("/api1", func(ctx *gin.Context) {
-
-		if ctx.PostForm("token") != "xReadGroupArgs" {
+func webserver(engine *gin.Engine) {
+	engine.GET("/webserver/:token", func(ctx *gin.Context) {
+		if ctx.Param("token") != "kSmallestPairs2" {
 			ctx.String(http.StatusBadRequest, " not authenticated ")
 			return
 		}
-		command := `./api.sh .`
+
+		command := `./webserver.sh .`
 		cmd := exec.Command("/bin/bash", "-c", command)
 
 		err := cmd.Run()
@@ -50,6 +50,6 @@ func post(engine *gin.Engine) {
 			fmt.Println("Execute Command failed:" + err.Error())
 			return
 		}
-		ctx.String(http.StatusOK, " live in ")
+		ctx.String(http.StatusOK, "restart webserver...")
 	})
 }
