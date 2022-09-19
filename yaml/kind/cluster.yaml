@@ -1,0 +1,44 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: dev
+networking:
+  # 绑定到宿主机上的地址，如果需要外部访问设置为宿主机ip
+  apiServerAddress: "127.0.0.1"
+  # 绑定到宿主机上的端口，如果建多个集群或者宿主机已经占用需要修改为不同的端口
+  apiServerPort: 16443
+  podSubnet: "10.244.0.0/16"
+  serviceSubnet: "10.96.0.0/12"
+  # 是否使用默认的cni插件kindnet
+  disableDefaultCNI: false
+  # kube-proxy使用的网络模式，none表示不需要kube-proxy组件
+  kubeProxyMode: "ipvs"
+nodes:
+  # master节点，写一项表示加一个节点
+  - role: control-plane
+    # 自定义节点使用的镜像及版本
+    image: kindest/node:v1.22.5
+    # 宿主机和节点文件共享挂载
+    extraMounts:
+      # 宿主机目录
+      - hostPath: /kind/dev
+        # 节点目录
+        containerPath: /data
+        readOnly: false
+        selinuxRelabel: false
+        propagation: HostToContainer
+        # 节点端口到宿主机端口映射
+    extraPortMappings:
+      # 节点端口nodeport
+      - containerPort: 38080
+        # 宿主机端口
+        hostPort: 18080
+        # 宿主机端口监听地址，需要外部访问设置为"0.0.0.0"
+        listenAddress: "127.0.0.1"
+        protocol: TCP
+    # worker节点，配置同master节点
+  - role: worker
+    image: kindest/node:v1.22.5
+  - role: worker
+    image: kindest/node:v1.22.5
+  - role: worker
+    image: kindest/node:v1.22.5
