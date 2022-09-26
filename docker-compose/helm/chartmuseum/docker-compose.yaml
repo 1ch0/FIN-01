@@ -1,0 +1,16 @@
+version: '3'
+services:
+  chartmuseum:
+    restart: always
+    image: ghcr.io/helm/chartmuseum:v0.14.0
+    container_name: chartmuseum
+    volumes:
+      - ./charts:/charts
+    environment:
+      - "DEBUG=1"
+      - "STORAGE=local"
+      - "STORAGE_LOCAL_ROOTDIR=/charts"
+    ports:
+      # 使用宿主机的3306端口映射到容器的3306端口
+      # 宿主机：容器
+      - 18080:18080
