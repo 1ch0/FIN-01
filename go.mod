@@ -31,6 +31,7 @@ require (
 	github.com/hashicorp/go-version v1.6.0
 	github.com/ivpusic/grpool v1.0.0
 	github.com/jackc/pgx v3.6.2+incompatible
+	github.com/kyokomi/emoji v2.2.4+incompatible
 	github.com/lib/pq v1.10.6
 	github.com/marusama/cyclicbarrier v1.1.0
 	github.com/mdlayher/schedgroup v1.0.0
