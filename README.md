@@ -1,6 +1,7 @@
 # go-cx
 ## Useful go demo collections.
 
+```shell
 .
 ├── cue
 │   ├── cuetorials
@@ -181,3 +182,4 @@
 │       └── websocket
 └── yaml
     └── kind
+```
