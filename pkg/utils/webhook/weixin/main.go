@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	SendMessage("Gcloud 通知： 应用发布")
+	SendMessage("通知： 应用发布")
 }
 
 type Message struct {
