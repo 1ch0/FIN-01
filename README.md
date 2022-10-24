@@ -1,5 +1,63 @@
 # go-cx
 ## Useful go demo collections.
+```shell
+├── cue
+│   ├── cuetorials
+│   ├── demo_001
+│   ├── demo_002
+│   └── README.md
+├── docker-compose
+│   ├── alist
+│   ├── gitea
+│   ├── helm
+│   ├── kafka
+│   ├── keycloak-mysql
+│   ├── mongodb
+│   ├── mysql
+│   ├── nginx-proxy-manager
+│   ├── portainer
+│   ├── postgresql
+│   ├── redis
+│   └── redis-cluster
+├── dockerfile
+│   ├── Dockerfile
+│   └── Dockerfile.multistage
+├── go.mod
+├── go.sum
+├── grammer
+│   ├── concurrent
+│   ├── design_pattern
+│   ├── generics
+│   └── interest
+├── interview
+│   └── array
+├── LICENSE
+├── Makefile
+├── pkg
+│   ├── db
+│   ├── grammer
+│   ├── lib
+│   ├── logger
+│   └── utils
+├── README.md
+├── scripts
+│   ├── app
+│   ├── cloud
+│   ├── init_ubuntu.sh
+│   ├── init_user.sh
+│   ├── install_go.sh
+│   ├── os
+│   └── wrktest.sh
+├── Taskfile.yml
+├── web
+│   ├── fiber
+│   ├── gin
+│   ├── validator
+│   └── web_examples
+└── yaml
+    └── kind
+```
+
 
 ### cue
 ```shell
