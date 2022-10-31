@@ -2,6 +2,7 @@ package _3_singleton
 
 import "sync"
 
+// TODO: 待优化
 type Singleton interface {
 	foo()
 }
