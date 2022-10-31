@@ -38,6 +38,7 @@ require (
 	github.com/ivpusic/grpool v1.0.0
 	github.com/jackc/pgx v3.6.2+incompatible
 	github.com/jackmordaunt/icns/v2 v2.2.1
+	github.com/jinzhu/now v1.1.5
 	github.com/josephspurrier/goversioninfo v1.4.0
 	github.com/kyokomi/emoji v2.2.4+incompatible
 	github.com/lib/pq v1.10.6
