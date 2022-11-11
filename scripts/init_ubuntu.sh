@@ -2,9 +2,11 @@
 set -x
 lsb_release -a
 mkdir $HOME/workspace
-mkdir $HOME/workspace/docker-compose
-mkdir $HOME/workspace/yaml
-mkdir $HOME/workspace/scripts
+mkdir $HOME/workspace/github.com
+mkdir $HOME/workspace/app
+mkdir $HOME/workspace/app/docker-compose
+mkdir $HOME/workspace/app/yaml
+mkdir $HOME/workspace/app/scripts
 
 
 tee -a $HOME/.bashrc << EOF
