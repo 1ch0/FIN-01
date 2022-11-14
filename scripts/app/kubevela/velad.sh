@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -fsSl https://static.kubevela.net/script/install-velad.sh | bash -s 1.4.3
+curl -fsSl https://static.kubevela.net/script/install-velad.sh
 velad uninstall
 velad install
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
