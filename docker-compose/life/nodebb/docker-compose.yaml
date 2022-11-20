@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+  node:
+    image: nodebb/docker
+    container_name: nodebb_web
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - 4567:4567
+    volumes:
+      # - ./config.json:/usr/src/app/config.json
+      - ./uploads:/usr/src/app/public/uploads
+
+  db:
+    image: mongo
+    container_name: nodebb_db
+    restart: unless-stopped
+    volumes:
+      - ./mongo:/data/db
