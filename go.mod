@@ -1,4 +1,4 @@
-module go-cx
+module github.com/1ch0/go-cx
 
 go 1.19
 
