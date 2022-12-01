@@ -1,4 +1,4 @@
-module go-cx
+module github.com/1ch0/go-cx
 
 go 1.19
 
@@ -13,6 +13,7 @@ require (
 	github.com/bwmarrin/snowflake v0.3.0
 	github.com/bytedance/sonic v1.3.5
 	github.com/coreos/go-oidc v2.2.1+incompatible
+	github.com/darjun/goexec v0.0.0-20221103112234-ad0407746f09
 	github.com/dpaks/goworkers v1.8.0
 	github.com/eapache/channels v1.1.0
 	github.com/facebookgo/errgroup v0.0.0-20160209021148-779c8d7ef069
@@ -35,6 +36,7 @@ require (
 	github.com/gorilla/websocket v1.5.0
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/hashicorp/go-version v1.6.0
+	github.com/hpcloud/tail v1.0.0
 	github.com/ivpusic/grpool v1.0.0
 	github.com/jackc/pgx v3.6.2+incompatible
 	github.com/jackmordaunt/icns/v2 v2.2.1
@@ -66,6 +68,7 @@ require (
 	go.etcd.io/etcd/client/v3 v3.5.4
 	go.mongodb.org/mongo-driver v1.10.1
 	go.uber.org/atomic v1.7.0
+	go.uber.org/fx v1.18.2
 	go.uber.org/goleak v1.1.12
 	go.uber.org/zap v1.22.0
 	golang.org/x/crypto v0.0.0-20220817201139-bc19a97f63c8
@@ -177,7 +180,6 @@ require (
 	go.etcd.io/etcd/api/v3 v3.5.4 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.4 // indirect
 	go.uber.org/dig v1.15.0 // indirect
-	go.uber.org/fx v1.18.2 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
 	golang.org/x/arch v0.0.0-20210923205945-b76863e36670 // indirect
 	golang.org/x/image v0.0.0-20220601225756-64ec528b34cd // indirect
@@ -187,6 +189,7 @@ require (
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20220628213854-d9e0b6570c03 // indirect
 	google.golang.org/grpc v1.47.0 // indirect
+	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/ini.v1 v1.66.4 // indirect
 	gopkg.in/square/go-jose.v2 v2.5.1 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect

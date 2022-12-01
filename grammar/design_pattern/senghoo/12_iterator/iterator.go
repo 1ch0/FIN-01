@@ -1,4 +1,4 @@
-package iterator
+package _2_iterator
 
 import "fmt"
 
@@ -11,16 +11,12 @@ type Iterator interface {
 	IsDone() bool
 	Next() interface{}
 }
-
 type Numbers struct {
 	start, end int
 }
 
 func NewNumbers(start, end int) *Numbers {
-	return &Numbers{
-		start: start,
-		end:   end,
-	}
+	return &Numbers{start, end}
 }
 
 func (n *Numbers) Iterator() Iterator {
@@ -35,18 +31,18 @@ type NumbersIterator struct {
 	next    int
 }
 
-func (n *NumbersIterator) First() {
-	n.next = n.numbers.start
+func (i *NumbersIterator) First() {
+	i.next = i.numbers.start
 }
 
-func (n *NumbersIterator) IsDone() bool {
-	return n.next > n.numbers.end
+func (i *NumbersIterator) IsDone() bool {
+	return i.next > i.numbers.end
 }
 
-func (n *NumbersIterator) Next() interface{} {
-	if !n.IsDone() {
-		next := n.next
-		n.next++
+func (i *NumbersIterator) Next() interface{} {
+	if !i.IsDone() {
+		next := i.next
+		i.next++
 		return next
 	}
 	return nil
