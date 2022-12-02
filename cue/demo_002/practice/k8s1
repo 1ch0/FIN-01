@@ -1,4 +1,0 @@
-#引入k8s资源的模块
-
-go mod init main
-cue get go k8s.io/api/extensions/v1beta1 -v
