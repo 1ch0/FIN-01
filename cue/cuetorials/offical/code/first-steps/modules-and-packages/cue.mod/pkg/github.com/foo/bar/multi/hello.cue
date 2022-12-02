@@ -1,3 +1,0 @@
-package hello
-
-msg: "hello"

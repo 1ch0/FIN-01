@@ -1,5 +1,0 @@
-Hello bob, welcome to Cuetorials
-
---- TODO ---
-t3  3
-t5  3

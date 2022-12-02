@@ -1,4 +1,0 @@
-{
-	i: int
-	s: "hello"
-}

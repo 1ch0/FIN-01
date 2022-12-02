@@ -1,2 +1,0 @@
-# 使用 cue import 将已有的yaml转成Cue语言
-cue import ./... -p kube -l '"\(strings.ToCamel(kind))" "\(metadata.name)"' -fR

@@ -1,9 +1,0 @@
-obj:
-struct
-list
-_
-struct
-
-sub:
-string
-int
