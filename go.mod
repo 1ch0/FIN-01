@@ -9,6 +9,7 @@ require (
 	github.com/Knetic/govaluate v3.0.0+incompatible
 	github.com/Lofanmi/pinyin-golang v0.0.0-20211114132645-1db892057f20
 	github.com/aaronjan/hunch v1.1.3
+	github.com/apache/rocketmq-client-go/v2 v2.1.1
 	github.com/briandowns/spinner v1.19.0
 	github.com/bwmarrin/snowflake v0.3.0
 	github.com/bytedance/sonic v1.3.5
@@ -50,6 +51,7 @@ require (
 	github.com/mcuadros/go-version v0.0.0-20190830083331-035f6764e8d2
 	github.com/mdlayher/schedgroup v1.0.0
 	github.com/mitchellh/mapstructure v1.5.0
+	github.com/nsqio/go-nsq v1.1.0
 	github.com/oam-dev/kubevela v1.5.2
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.20.0
@@ -148,7 +150,6 @@ require (
 	github.com/mpvl/unique v0.0.0-20150818121801-cbe035fff7de // indirect
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
 	github.com/nsf/termbox-go v0.0.0-20190121233118-02980233997d // indirect
-	github.com/nsqio/go-nsq v1.1.0 // indirect
 	github.com/nxadm/tail v1.4.8 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.3 // indirect
@@ -189,6 +190,7 @@ require (
 	google.golang.org/grpc v1.47.0 // indirect
 	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/ini.v1 v1.66.4 // indirect
+	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
 	gopkg.in/square/go-jose.v2 v2.5.1 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
