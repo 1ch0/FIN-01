@@ -1,0 +1,23 @@
+version: '3'
+services:
+  minio:
+    image: minio/minio:latest
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./data:/data
+    environment:
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio123
+    command: server /data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+  admin:
+    image: minio/mc:latest
+    depends_on:
+      - minio
+    entrypoint: sh
+    command: -c "mc config host add myminio http://minio:9000 minio minio123; mc mb myminio/bucket1; mc cp C__Users_TEST_* myminio/bucket1/"
