@@ -1,4 +1,12 @@
 # go-cx
+## This repository has archived and the contents have been migrated to the following repositories
+- [docker-compose](https://github.com/1ch0/docker-compose)
+- [cue](https://github.com/1ch0/cue-learn)
+- [grammar](https://github.com/1ch0/go-grammar)
+- [design_pattern](https://github.com/1ch0/go-design-pattern)
+- [scripts](https://github.com/1ch0/scripts)
+- [pkg](https://github.com/1ch0/go-pkg)
+
 ## Useful go demo collections.
 ```shell
 ├── cue
